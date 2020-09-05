@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="em">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+	<title>Mode Swapper</title>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+	<style type="text/css">
+body{
+	color: #222;
+	background: #fff;
+}
+body.dark-mode{
+	color: #eee;
+	background: #121212;
+}
+.header h1{
+	font-family: 'Merriweather', serif;
+	font-size: 6rem;
+	text-align: center;
+	padding-top: 50px;
+}
+button{
+	font-size: 25px;
+	font-family: 'Merriweather', serif;
+	border: 2px solid #000;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0px 0px 0px 0px rgba(0,0,0,.1); 
+	width: 18rem;
+	height: 4rem;
+	margin-left: 500px;
+	background-color: #fff;
+}
+.dark-mode{
+	background:  #000;
+	color: #000;
+}
+button:hover{
+	color : #fff; 
+	font-family: 'Merriweather', serif;
+	transform: translate(0);
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,7);
+	background-color: #000;
+
+}
+button:hover:after{
+	color: #fff;
+	content: "";
+	left: 0px;
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	z-index: -1;
+	font-family: 'Merriweather', serif;
+	transform: translate(0,100%);
+	transition: all .25s ease;
+}
+div .footer p{
+	margin-left: 34rem;
+	margin-top: 10rem;
+	font-weight: bolder;
+	font-size: 20px;
+	
+}
+</style>
+</head>
+<body class="dark-mode">
+	<div>
+		<div class="header">
+			<h1>Light and Dark Theme</h1>
+		</div>
+		<div>
+			<button class="btn-toggle">Click To Switch Mode</button>
+		</div>
+		<div class="footer">
+			<p>&#169; <script> document.write(new Date().getFullYear())</script> Md Sohail uddin</a></p>
+		</div>
+	</div>
+<script>
+	const btn = document.querySelector('.btn-toggle');
+	btn.addEventListener('click',function(){
+		document.body.classList.toggle('dark-mode');
+
+	})
+</script>
+</body>
+</html>
